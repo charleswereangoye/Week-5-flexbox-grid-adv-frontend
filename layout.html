@@ -8,7 +8,13 @@
   <link rel="stylesheet" href="flexbox.css">
 </head>
 <body>
- 
+
+  <div class="layout-switch" role="group" aria-label="Choose layout technique">
+    <button type="button" data-css="flexbox.css" aria-pressed="true">Flexbox</button>
+    <button type="button" data-css="grid.css" aria-pressed="false">Grid</button>
+  </div>
+
+
   <div class="page">
 
     <header class="header">
@@ -40,7 +46,7 @@
 
       <main class="main">
         <h2>Welcome to the Circle</h2>
-        <p>Creator Circle is a community for creators who want to share ideas, find collaborators, and build lasting professional relationships. Join a local community around you or connect online.</p>
+        <p>Creator Circle is a community for creators who want to share ideas, find collaborators, and build lasting professional relationships. Join a local chapter or connect online.</p>
 
         <section class="featured">
           <h3>Featured Members</h3>
@@ -76,5 +82,17 @@
     </footer>
 
   </div>
+
+  <script>
+    const layoutLink = document.getElementById('layout-css');
+    const buttons = document.querySelectorAll('.layout-switch button');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        layoutLink.href = button.dataset.css;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', b === button));
+      });
+    });
+  </script>
 </body>
 </html>
