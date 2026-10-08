@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creator Circle | Level 4 Holy Grail</title>
+
+  <!-- for shared typography, components, etc.. -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- layout technique used -->
+  <script>
+    const layout = new URLSearchParams(location.search).get('layout') === 'grid' ? 'grid' : 'flexbox';
+    document.write(`<link rel="stylesheet" href="css/${layout}-style.css">`);
+  </script>
+</head>
+<body>
+
+  <div class="layout-switch" role="group" aria-label="Choose layout technique">
+    <a href="?layout=flexbox" data-layout="flexbox">Flexbox</a>
+    <a href="?layout=grid" data-layout="grid">Grid</a>
+  </div>
+
+  <div class="page">
+
+    <!-- fixed header -->
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Creator Circle home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="16" cy="16" r="5" fill="currentColor"/>
+        </svg>
+        <span>Creator Circle</span>
+      </a>
+
+      <details class="user-menu">
+        <summary>
+          <span class="user-menu__avatar" aria-hidden="true">B</span>
+          <span class="user-menu__name">BK</span>
+        </summary>
+        <ul class="user-menu__panel">
+          <li><a href="#">My profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Sign out</a></li>
+        </ul>
+      </details>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <ul class="nav__list">
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Members</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Join</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <aside class="sidebar sidebar--left" id="sidebar-left" aria-label="Browse creators by niche">
+        <h2>Find Creators</h2>
+        <ul>
+          <li><a href="#">Video &amp; Film</a></li>
+          <li><a href="#">Podcasting</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Music &amp; Audio</a></li>
+          <li><a href="#">Design &amp; Illustration</a></li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <h1>Welcome to the Circle (Level 4)</h1>
+        <p>Creator Circle is a community for creators who want to share ideas, find collaborators, and build lasting professional relationships. Join a local chapter or connect online.</p>
+
+        <!-- sidebars collapse and expand with these buttons below -->
+        <div class="toolbar" role="group" aria-label="Show or hide sidebars">
+          <button type="button" data-toggle="left" aria-controls="sidebar-left" aria-expanded="true">Find Creators</button>
+          <button type="button" data-toggle="right" aria-controls="sidebar-right" aria-expanded="true">Events</button>
+        </div>
+
+        <section class="featured" aria-labelledby="featured-title">
+          <h2 id="featured-title">Featured Members</h2>
+          <div class="card-grid">
+            <article class="card card--featured">
+              <h3>Tino Wanjiru</h3>
+              <p>Documentary filmmaker looking for editors and sound designers for a six-part series on East African makers.</p>
+              <footer class="card__tag">Video &amp; Film</footer>
+            </article>
+            <article class="card">
+              <h3>Daniel Otieno</h3>
+              <p>Podcast host open to guest swaps and co-hosted episodes.</p>
+              <footer class="card__tag">Podcasting</footer>
+            </article>
+            <article class="card">
+              <h3>Amara Nkosi</h3>
+              <p>Photographer seeking brands for lifestyle and product shoots.</p>
+              <footer class="card__tag">Photography</footer>
+            </article>
+            <article class="card">
+              <h3>Leila Mwangi</h3>
+              <p>Producer building a sample pack and looking for vocalists to feature.</p>
+              <footer class="card__tag">Music &amp; Audio</footer>
+            </article>
+            <article class="card">
+              <h3>Kevin Habimana</h3>
+              <p>Illustrator offering thumbnail and cover art swaps.</p>
+              <footer class="card__tag">Design</footer>
+            </article>
+            <article class="card">
+              <h3>Grace Uwase</h3>
+              <p>Short-form editor trading edits for studio time.</p>
+              <footer class="card__tag">Video &amp; Film</footer>
+            </article>
+            <article class="card">
+              <h3>Samuel Kato</h3>
+              <p>Voice artist available for podcast intros and ads.</p>
+              <footer class="card__tag">Podcasting</footer>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar sidebar--right" id="sidebar-right" aria-label="Upcoming events and newsletter">
+        <section>
+          <h2>Upcoming Events</h2>
+          <ul>
+            <li><time datetime="2026-10-17">Oct 17</time>: Monthly Networking Event</li>
+            <li><time datetime="2026-10-24">Oct 24</time>: Collab Matchmaking Sundowner</li>
+            <li><time datetime="2026-11-07">Nov 7</time>: Brand Deals Workshop</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Newsletter</h2>
+          <p>Get event updates and member spotlights each week.</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__about">
+        <p class="footer__brand">Creator Circle</p>
+        <p>Where content creators meet, collaborate, and grow together.</p>
+      </div>
+
+      <div class="footer__links">
+        <section>
+          <h2>Community</h2>
+          <ul>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Local chapters</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="#">Collab guides</a></li>
+            <li><a href="#">Brand deal templates</a></li>
+            <li><a href="#">Newsletter archive</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Company</h2>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <p class="footer__legal">&copy; 2026 Creator Circle. AdvFrontend Group 4.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // collapse / expand sidebars
+    const content = document.querySelector('.content');
+    document.querySelectorAll('[data-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const collapsed = content.classList.toggle(`is-${btn.dataset.toggle}-collapsed`);
+        btn.setAttribute('aria-expanded', String(!collapsed));
+      });
+    });
+
+    // mark which layout technique is active
+    document.querySelector(`.layout-switch a[data-layout="${layout}"]`).setAttribute('aria-current', 'true');
+  </script>
+</body>
+</html>
