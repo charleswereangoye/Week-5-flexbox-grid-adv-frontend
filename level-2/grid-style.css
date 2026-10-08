@@ -1,0 +1,49 @@
+.page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "sidebar"
+        "footer";
+    min-height: 100vh;
+}
+
+.content {
+    display: contents;
+    /* this lets the child items use the grid from the main page */
+}
+
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* this sets the main part to 7 fractions and sidebar to 3 fractions on computers */
+@media (min-width: 768px) {
+    .page {
+        grid-template-columns: 7fr 3fr;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main sidebar"
+            "footer footer";
+    }
+}
