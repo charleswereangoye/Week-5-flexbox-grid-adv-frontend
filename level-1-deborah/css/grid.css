@@ -12,25 +12,31 @@ body {
     "main"
     "footer";                         
   min-height: 100vh;            
+  color: #0b2545;
+  background: #dff7ec;
 }
 
 header {
   grid-area: header;           
   padding: 20px;
-  background: #4a90d9;
+  background: #0b2545;
   color: white;
+}
+
+header h1 {
+  color: #8fe3c0;
 }
 
 main {
   grid-area: main;
   padding: 30px;
-  background: #e8f1fa;
+  background: #fafffc;
 }
 
 footer {
   grid-area: footer;
   padding: 20px;
-  background: #2c3e50;
+  background: #0b2545;
   color: white;
 }
 
