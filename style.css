@@ -63,6 +63,12 @@ a:hover { color: #1d6f54; }
 .sidebar  { background: var(--color-sidebar); }
 .main     { background: var(--color-main); }
 
+.sidebar,
+.main { padding: 1.5rem var(--space); }
+
+.sidebar li                { padding: 0.35rem 0; }
+.sidebar section + section { margin-top: 1.5rem; }
+
 .member {
   border-left: 0px solid var(--color-accent);
   padding-left: 0.75rem;
