@@ -7,7 +7,20 @@
   --color-light:   #ffffff;
 }
 
-body { color: var(--color-dark); }
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--color-dark);
+}
+
+h1, h2, h3, h4 { margin: 0 0 0.5rem; line-height: 1.2; }
+p              { margin: 0 0 var(--space); }
+ul             { margin: 0; padding: 0; list-style: none; }
 
 a { color: var(--color-dark); }
 a:hover { color: #1d6f54; }
