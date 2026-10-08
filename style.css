@@ -69,7 +69,14 @@ a:hover { color: #1d6f54; }
 .sidebar li                { padding: 0.35rem 0; }
 .sidebar section + section { margin-top: 1.5rem; }
 
+.featured { margin-top: 1.5rem; }
+
+.member-list { gap: var(--space); }
+
 .member {
-  border-left: 0px solid var(--color-accent);
-  padding-left: 0.75rem;
+  padding: 0.75rem var(--space);
+  background: var(--color-light);
+  border-left: 4px solid var(--color-accent);
 }
+
+.member p { margin: 0; }
