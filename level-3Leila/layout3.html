@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creator Circle | Flexbox Layout</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+
+  <div class="layout-switch" role="group" aria-label="Choose layout technique">
+    <button type="button" data-css="flexbox.css" aria-pressed="true">Flexbox</button>
+    <button type="button" data-css="grid.css" aria-pressed="false">Grid</button>
+  </div>
+
+
+  <div class="page">
+
+    <header class="header">
+      <h1>Creator Circle</h1>
+      <p>Where content creators meet, collaborate, and grow together.</p>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <ul class="nav__list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Members</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Join</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <aside class="sidebar sidebar--left" aria-label="Browse creators by niche">
+        <h2>Find Creators</h2>
+        <ul>
+          <li><a href="#">Video &amp; Film</a></li>
+          <li><a href="#">Podcasting</a></li>
+          <li><a href="#">Photography and Videography</a></li>
+          <li><a href="#">Music &amp; Audio</a></li>
+          <li><a href="#">Design &amp; Illustration</a></li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <h2>Welcome to the Circle</h2>
+        <p>Creator Circle is a community for creators who want to share ideas, find collaborators, and build lasting professional relationships. Join a local chapter or connect online.</p>
+
+        <section class="featured">
+          <h3>Featured Members</h3>
+          <article class="member">
+            <h4>Tino Wanjiru</h4>
+            <p>Documentary filmmaker looking for editors and sound designers.</p>
+          </article>
+          <article class="member">
+            <h4>Daniel Otieno</h4>
+            <p>Podcast host open to guest swaps and co-hosted episodes.</p>
+          </article>
+        </section>
+      </main>
+
+      <aside class="sidebar sidebar--right" aria-label="Upcoming events and newsletter">
+        <section>
+          <h2>Upcoming Events</h2>
+          <ul>
+            <li><time datetime="2026-10-17">Oct 17</time>: Monthly Networking Event</li>
+            <li><time datetime="2026-10-24">Oct 24</time>: Collab Matchmaking Sundowner</li>
+            <li><time datetime="2026-11-07">Nov 7</time>: Brand Deals Workshop</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Newsletter</h2>
+          <p>Get event updates and member spotlights each week.</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Creator Circle. AdvFrontend Group 4.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const layoutLink = document.getElementById('layout-css');
+    const buttons = document.querySelectorAll('.layout-switch button');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        layoutLink.href = button.dataset.css;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', b === button));
+      });
+    });
+  </script>
+</body>
+</html>

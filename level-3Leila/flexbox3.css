@@ -1,0 +1,38 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;                    
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    flex: 0 0 100%;
+    order: 1;
+  }
+
+  .sidebar {
+    flex: 1;
+    order: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content { flex-wrap: nowrap; }
+
+  .sidebar { flex: 0 0 20%; }
+  .main    { flex: 0 0 60%; }
+
+  .sidebar--left  { order: 1; }
+  .main           { order: 2; }
+  .sidebar--right { order: 3; }
+}
