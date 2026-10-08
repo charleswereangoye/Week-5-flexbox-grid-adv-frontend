@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Creator Circle | Flexbox Layout</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="flexbox.css">
+  <title>Creator Circle | Flexbox vs Grid</title>
+  <link rel="stylesheet" href="css_level3/style3.css">
+  <!-- Layout stylesheet: the switcher below swaps this between css_level3/flexbox3.css and css_level3/grid3.css -->
+  <link rel="stylesheet" href="css_level3/flexbox3.css" id="layout-css">
 </head>
 <body>
 
+  <!-- Layout switcher (demo only): toggles which layout stylesheet is loaded -->
   <div class="layout-switch" role="group" aria-label="Choose layout technique">
-    <button type="button" data-css="flexbox.css" aria-pressed="true">Flexbox</button>
-    <button type="button" data-css="grid.css" aria-pressed="false">Grid</button>
+    <button type="button" data-css="css_level3/flexbox3.css" aria-pressed="true">Flexbox</button>
+    <button type="button" data-css="css_level3/grid3.css" aria-pressed="false">Grid</button>
   </div>
 
-
+  <!-- Flexbox: .page is the outer flex column and .content is the nested flex row.
+       Grid: .page is the grid container and .content uses display: contents,
+       so header, nav, asides, main and footer sit directly in the named areas. -->
   <div class="page">
 
     <header class="header">
