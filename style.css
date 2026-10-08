@@ -39,7 +39,27 @@ a:hover { color: #1d6f54; }
 
 .footer { padding-bottom: 4.5rem; }
 
-.nav      { background: var(--color-mint); }
+.nav { background: var(--color-mint); }
+
+.nav__list {
+  max-width: 40rem;
+  margin: 0 auto;
+  font-size: 0.8rem;
+}
+
+.nav a {
+  display: block;
+  padding: 0.75rem 0.25rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
 .sidebar  { background: var(--color-sidebar); }
 .main     { background: var(--color-main); }
 
