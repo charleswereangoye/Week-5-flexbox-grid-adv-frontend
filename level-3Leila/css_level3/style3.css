@@ -1,11 +1,11 @@
 :root {
-  --color-dark:    #021731;  
-  --color-mint:    #8fe3c0; 
+  --color-dark:    #0b2545;  
+  --color-mint:    #8fe3c0;  
   --color-sidebar: #dff7ec;  
-  --color-main:    #fafffc; 
-  --color-accent:  #316d53; 
+  --color-main:    #fafffc;  
+  --color-accent:  #30815e;  
   --color-light:   #ffffff;
-  --space: clamp(1rem, 0.6rem + 1.5vw, 2rem);  
+  --space: clamp(1rem, 0.6rem + 1.5vw, 2rem); 
 }
 
 * { box-sizing: border-box; }
@@ -70,7 +70,6 @@ a:hover { color: #1d6f54; }
   padding-left: 0.75rem;
 }
 
-/* ===== Layout switcher attempt ===== */
 .layout-switch {
   display: flex;
   justify-content: center;
@@ -92,4 +91,59 @@ a:hover { color: #1d6f54; }
 .layout-switch button[aria-pressed="true"] {
   background: var(--color-mint);
   color: var(--color-dark);
+}
+
+.layout-switch { flex-wrap: wrap; align-items: center; }
+
+.layout-note {
+  flex-basis: 100%;
+  margin: 0;
+  padding-inline: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-mint);
+}
+
+.page,
+.page > *,
+.content > * { position: relative; }
+
+.show-structure .page {
+  outline: 3px solid var(--demo-color);
+  outline-offset: -3px;
+}
+
+.show-structure :is(.header, .nav, .sidebar, .main, .footer) {
+  outline: 2px dashed var(--demo-color);
+  outline-offset: -6px;
+}
+
+.show-structure :is(.header, .nav, .sidebar, .main, .footer, .page, .content)::after {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  background: var(--demo-color);
+  color: var(--color-light);
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.show-structure .header::after        { content: var(--prefix) "header"; }
+.show-structure .nav::after           { content: var(--prefix) "nav"; }
+.show-structure .sidebar--left::after { content: var(--prefix) "left sidebar"; }
+.show-structure .main::after          { content: var(--prefix) "main"; }
+.show-structure .sidebar--right::after { content: var(--prefix) "right sidebar"; }
+.show-structure .footer::after        { content: var(--prefix) "footer"; }
+
+.show-structure .page::after {
+  content: var(--page-label);
+  left: auto;
+  right: 8px;
+  z-index: 2;
 }

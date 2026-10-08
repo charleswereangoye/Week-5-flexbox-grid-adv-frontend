@@ -1,3 +1,9 @@
+:root {
+  --demo-color: #5b4bd6;
+  --prefix: "grid-area: ";
+  --page-label: "grid container";
+}
+
 .header         { grid-area: header; }
 .nav            { grid-area: nav; }
 .sidebar--left  { grid-area: left; }

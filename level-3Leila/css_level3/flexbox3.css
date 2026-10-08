@@ -1,3 +1,18 @@
+:root {
+  --demo-color: #c2410c;
+  --prefix: "flex item: ";
+  --page-label: "outer flex container";
+}
+
+.show-structure .content { outline: 3px dotted var(--demo-color); outline-offset: -3px; }
+.show-structure .content::after {
+  content: "nested flex container";
+  top: auto;
+  left: auto;
+  right: 8px;
+  bottom: 8px;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -6,7 +21,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  flex: 1;                    
+  flex: 1;                  
 }
 
 @media (min-width: 768px) {
