@@ -1,0 +1,31 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    /* this pushes the footer to the very bottom */
+}
+
+/* this makes the boxes take the full width on phones */
+.main,
+.sidebar {
+    flex-basis: 100%;
+}
+
+/* this makes the screen split 70 percent and 30 percent on big screens */
+@media (min-width: 768px) {
+    .main {
+        flex-basis: 70%;
+        max-width: 70%;
+    }
+
+    .sidebar {
+        flex-basis: 30%;
+        max-width: 30%;
+    }
+}
