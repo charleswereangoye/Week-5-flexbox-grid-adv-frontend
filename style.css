@@ -27,11 +27,17 @@ a:hover { color: #1d6f54; }
 
 .header,
 .footer {
+  padding: 1.5rem var(--space);
   background: var(--color-dark);
   color: var(--color-light);
+  text-align: center;
 }
 
 .header h1 { color: var(--color-mint); }
+.header p,
+.footer p  { margin: 0; }
+
+.footer { padding-bottom: 4.5rem; }
 
 .nav      { background: var(--color-mint); }
 .sidebar  { background: var(--color-sidebar); }
